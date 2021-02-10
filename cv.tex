@@ -1,0 +1,28 @@
+\startenvironment cv
+
+\setuppapersize[letter]
+\setuplayout[backspace=5.5cm, leftmargin=3cm, rightedge=0cm, width=13cm]
+\setuppagenumbering[location=footer]
+\setupinmargin[align=right]
+
+\define[2]\DrawLine
+{\inmargin{\fillinline[width=2.8cm, color=darkmagenta, rulethickness=3.8pt]} #2}
+
+\definehead[ResumeHead][subject]
+\setuphead[ResumeHead][style=\bfa,after={\blank[medium]}, color=darkmagenta, command=\DrawLine]
+
+\startluacode
+require("cv")
+\stopluacode
+
+\def\ResumeEntry[#1]{\ctxlua{
+                userdata.ResumeEntry('#1')}
+}
+\def\ResumeShortEntry[#1]{\ctxlua{
+                userdata.ResumeShortEntry('#1')}
+}
+\def\ResumeTitle[#1]{\ctxlua{
+                userdata.ResumeTitle('#1')}
+}
+
+\stopenvironment
