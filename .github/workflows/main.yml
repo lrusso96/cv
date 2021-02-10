@@ -1,0 +1,21 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub Checkout
+        uses: actions/checkout@v2
+
+      - name: Download ConTeXt and Compile
+        run: |
+          wget -O context.zip http://lmtx.pragma-ade.nl/install-lmtx/context-linux-64.zip
+          unzip context.zip -d context
+          cd context/
+          sh install.sh
+          cd tex/texmf-linux-64/bin
+          CTXPATH=`pwd`
+          cd $GITHUB_WORKSPACE
+          $CTXPATH/context main
