@@ -31,7 +31,7 @@ function userdata.ResumeShortEntry(keyvals)
     text = keyvals["text"]
 
     context("\\inmargin{\\tf %s}", margin)
-    context(text)
+    context("{%s}", text)
 end
 
 function userdata.ResumeTitle(keyvals)
