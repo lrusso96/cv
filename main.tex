@@ -3,11 +3,23 @@
 \starttext
 \setvariables[metadata][maincolor=darkblue]
 
+\usepath[{sections}]
+
+\setupinteraction[state=start, color=darkblue]
+
 \ResumeTitle[fullname=Luigi Russo]
+\blank
+
+\ResumeShortEntry[text={{\\bf Last Updated:} \\currentdate \\; \\currenttime}]
+\blank[2*big]
+\ResumeShortEntry[text={{\\bf Email:} russol AT eurecom.fr}]
+
+\ResumeShortEntry[text={{\\bf Office:} 375 - EURECOM, Digital Security Department}]
+
 \component education
 \ResumeHead{Publications}
-\ResumeHead{Projects}
+\component projects
 \component skills
 \component languages
-\ResumeHead{More}
+\component more
 \stoptext
