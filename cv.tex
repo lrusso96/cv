@@ -9,20 +9,22 @@
 {#2\inmargin{\fillinline[width=2.8cm, color={\getvariable{metadata}{maincolor}}, rulethickness=3.8pt]}}
 
 \definehead[ResumeHead][subject]
+\definehead[ResumeHeadSub][subsubject]
 \setuphead[ResumeHead][style=\bfa,after={\blank[medium]}, color={\getvariable{metadata}{maincolor}}, command=\DrawLine]
+\setuphead[ResumeHeadSub][style=\bf, after={\blank[medium]}, color={\getvariable{metadata}{maincolor}}]
 
 \startluacode
 require("cv")
 \stopluacode
 
 \def\ResumeEntry[#1]{\ctxlua{
-                userdata.ResumeEntry('#1')}
+        userdata.ResumeEntry('#1')}
 }
 \def\ResumeShortEntry[#1]{\ctxlua{
-                userdata.ResumeShortEntry('#1')}
+        userdata.ResumeShortEntry('#1')}
 }
 \def\ResumeTitle[#1]{\ctxlua{
-                userdata.ResumeTitle('#1')}
+        userdata.ResumeTitle('#1')}
 }
 
 \stopenvironment
