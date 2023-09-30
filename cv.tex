@@ -6,10 +6,10 @@
 \setupinmargin[align=right]
 
 \define[2]\DrawLine
-{#2\inmargin{\fillinline[width=2.8cm, color={\getvariable{metadata}{maincolor}}, rulethickness=3.8pt]}}
+{#2\inmargin{\fillinline[width=2.8cm, color={\getvariable{metadata}{maincolor}}, rulethickness=3.5pt]}}
 
 \definehead[ResumeHead][subject]
-\setuphead[ResumeHead][style=\bfa,after={\blank[medium]}, color={\getvariable{metadata}{maincolor}}, command=\DrawLine]
+\setuphead[ResumeHead][style=\bfa, color={\getvariable{metadata}{maincolor}}, command=\margintitle{\fillinline[width=2.8cm, color={\getvariable{metadata}{maincolor}}, rulethickness=3.5pt]}]
 
 \startluacode
 require("cv")
